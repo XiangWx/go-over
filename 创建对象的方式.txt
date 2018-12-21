@@ -1,0 +1,30 @@
+创建对象，
+归根结底，都是通过new构造函数创建出来的对象
+1，对象字面量
+ var obj = { }
+2，数组字面量
+ var arr = [ ]
+3，正则字面量
+ var reg = /^ \w$/
+4，通过构造函数创建对象
+ var obj = creatObj（‘xx’）
+ function creatObj(name){
+     return {
+	name:name
+ 	}
+}
+5, 自定义构造函数创建对象
+var obj4 = new Student('ls')
+
+function Student(name) {
+	this.name = name
+}
+
+// 判断对象的类型, typeof判断对象永远都是 'object'
+console.log(typeof obj4) // 'object'
+
+// instanceof 判断对象的具体类型
+// instanceof 判断依据 是看对象是否在 该构造函数的原型链上
+// A instanceof B 就是看B是否在A的原型链上
+console.log(obj4 instanceof Student) // true
+console.log(obj4 instanceof Object) // true
