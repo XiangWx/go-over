@@ -1,0 +1,4 @@
+改变this指向问题
+call(this指向，参数1，参数2）   立即调用
+apply(this指向，[ 参数，参数2])  立即调用
+bind（fun2)( ) bind只是绑定 需要手动调用
