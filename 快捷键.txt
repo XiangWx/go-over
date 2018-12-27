@@ -1,0 +1,5 @@
+live-server 启动服务器访问静态页面 （需要npm i live-server安装）
+
+ctrl+shift+10 手动运行终端
+alt+z 自动换行
+alt+shift+f 格式化

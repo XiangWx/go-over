@@ -1,0 +1,22 @@
+数组转字符串  arr.toString( ) arr.join()
+字符串转数组  str.split( )
+
+var arr = ['a','b','c'] 
+            arr.join()
+输出：  "a,b,c"
+
+            arr.join(' ')
+
+输出：    "abc"
+
+
+splice（）删除插入替换
+var array = [1,2,3,4,5]
+1. 数组.splice(起始位置，删除的个数)  
+	返回值是删除的元素
+	array.splice(0,1) ---删除一个
+	array.splice(1)   ---从索引第一个开始 删除后面所有
+2.数组.splice(1,0,88)
+    var arr =['aa','bb','vv','ww']
+   arr.splice(1,1,'xxxxx') 
+   console.log(arr) //['aa','xxxxx','vv','ww']

@@ -1,0 +1,10 @@
+数组转字符串  arr.toString( ) arr.join()
+字符串转数组  str.split( )
+
+var arr = ['a','b','c'] 
+            arr.join()
+输出：  "a,b,c"
+
+            arr.join(' ')
+
+输出：    "abc"
