@@ -1,0 +1,9 @@
+JavaScript的绑定事件方法有三种：
+1.直接在DOM里面绑定事件 <div onclick="fn()"></div>
+2.js脚本里面 获取到要注册事件的DOM元素 绑定
+  document.getElementById('btn').onclick = function(){}
+3.通过事件监听处理相应的业务逻辑
+ document.getElementById('btn').addEventListener('click',function(){ }) = function(){}
+
+第二种方式onclick注册事件的不好处在于，如果给同一个元素注册多个处理事件，后面的处理程序会覆盖前面，导致前面不做执行，这并不是我们想看到的。
+而事件监听的好处就是可以绑定多个事件处理函数，并且都会执行，当然addEventListener只兼容IE以外的浏览器，对于IE可以用attachEvent注册事件

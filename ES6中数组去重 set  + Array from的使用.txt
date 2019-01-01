@@ -1,0 +1,6 @@
+let array = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3];
+let set = new Set(array);
+
+let arr = Array.from(set);
+console.log(arr)    // [1,2,3,4,5]
+

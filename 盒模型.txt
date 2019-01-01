@@ -1,0 +1,5 @@
+在html中每个元素的都被描述成一个个盒子模型，主要是由内容content，border，margin，padding组成，我们常说的盒子模型其实是分成两种的，标准模式和怪异模式，可以通过box-sizing属性来选择
+所谓的标准模式：box-sizing:content-box
+如果设置内边距padding 整个盒子是会被撑开的，盒子的宽度或者高度 = content + padding + border + margin的
+所谓的怪异模式：box-sizing：border-box
+是将整个盒子的大小固定好，再将内容装进盒子里面，盒子大小并不会因为padding撑开的
