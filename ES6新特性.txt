@@ -1,0 +1,11 @@
+ES6新特性：
+1.有了块级作用域的概念  let命令 let声明的变量只有所在的代码块有效
+2.const命令 声明常量 声明必须立刻赋值
+3.解构赋值：数组和对象的解构赋值
+  用let var 命令都可以 let [a,b,c] = [1,2,3] var {fo,fn} = {fo:'aaa',fn:'bbb'}
+4.模板字符串：`` 反斜杠
+5.import export导入，导出模块
+（export和export default的区别： 一个文件里面只能使用一次export default，但可以有多个export。）
+6.箭头函数 函数内部的this永远指向函数外部的this
+
+ 
