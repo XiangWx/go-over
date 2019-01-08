@@ -1,3 +1,4 @@
 响应式布局：通过媒体查询@media screen 根据不同分辨率下的屏幕大小来采用不同的css样式 可以兼容各种设备
 
 Flex布局 也称为弹性盒模型 可以很快速的实现元素居中或者两边对齐 比如设置主轴方向的对齐方式 justify_content：space-around /space- between 也是我很喜欢的布局方式
+

@@ -1,5 +1,8 @@
 懒加载:
-访问一个页面的时候,先把img或者其他的背景图片路径替换成1*1px图片的路径,只有当图片出现在浏览器的可视区域了,才设置图片的真正路径,让真实图片显示出来
+访问一个页面的时候,先把img或者其他的背景图片路径替换成1*1px小图片的路径,只有当图片出现在浏览器的可视区域了,再将路径替换成图片的真实路径,让真实图片显示出来
 
 
 document.body.scorllTop / document.documentElement.scorllTop获取屏幕滚动距离
+
+jquery 实现懒加载   使用封装好的lazyload.js 插件
+vue中    mint UI 也有懒加载插件 lazy load组件
