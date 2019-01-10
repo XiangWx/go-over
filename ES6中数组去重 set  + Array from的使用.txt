@@ -1,6 +1,28 @@
+ES6中的new Set方法：
 let array = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3];
 let set = new Set(array);
 
 let arr = Array.from(set);
 console.log(arr)    // [1,2,3,4,5]
+-----------------------------------------
+ES5中的filter方法：
+var arr =[1,2,3,3,3,3,2,1];
+      var newArr = [];
+      arr.filter((item,i)=>{
+          if(newArr.indexOf(item) == -1){
+              newArr.push(item)      
+              return true
+          }
+      })  
+      console.log(newArr) //[1,2,3]
+
+------------------------------------------
+filter的高阶用法：
+var spread = [12, 5, 8, 8, 12]
+var filtered = spread.filter((item, index, arr) => {
+  return arr.indexOf(index) === idx;
+})
+//参数1：每个元素  参数2：索引 参数3：数组本身
+//  去除重复元素依靠的是indexOf总是返回第一个元素的位置，后续的重复元素位置与indexOf返回的位置不相等，因此被filter滤掉了。
+co,nsole.log('数组去重结果', filtered) //[12,5,8]
 
