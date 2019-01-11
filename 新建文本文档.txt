@@ -1,0 +1,18 @@
+computed：{ 当成普通的数据用
+	定义新的数据newgoods（）{
+  	 return  xxx 
+       }
+}
+使用的时候直接 {{ newgoods }}
+
+watch：{	
+	监听data中的数据改变
+       }
+
+
+路由的拦截 
+axios的拦截 
+
+使用第三方组件 直接绑定事件 可能不会生效 要加上修饰符 .native
+意思是使用原生的
+
