@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./vue2.js"></script>
+  <style>
+    #app {
+      width: 600px;
+      margin: 10px auto;
+    }
+
+    .tb {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .tb th {
+      background-color: #0094ff;
+      color: white;
+    }
+
+    .tb td,
+    .tb th {
+      padding: 5px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .add {
+      padding: 5px;
+      border: 1px solid black;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="add">
+      编号:
+      <input type="text" v-model="newId"> 品牌名称:
+      <input type="text" v-model="newName">
+      <input type="button" value="添加" @click="addData">
+    </div>
+
+    <div class="add">
+      品牌名称:
+      <input type="text" placeholder="请输入搜索条件" v-model="searchVal">
+    </div>
+
+    <div>
+      <table class="tb">
+        <tr>
+          <th>编号</th>
+          <th>品牌名称</th>
+          <th>创立时间</th>
+          <th>操作</th>
+        </tr>
+        <tr v-for="(item, index) in newList" :key="index">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.ctime}}</td>
+          <td>
+            <!-- 将index作为参数传入 -->
+            <a href="#" @click="deleteData(index)">删除</a>
+          </td>
+        </tr>
+        <tr v-if="list.length === 0">
+          <td colspan="4">没有品牌数据</td>
+        </tr>
+        <!-- 动态生成内容tr -->
+      </table>
+    </div>
+  </div>
+</body>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      newId: '',
+      newName: '',
+      searchVal: '',
+      list: [
+        {id: 1, name: 'CC', ctime: new Date()},
+        {id: 2, name: 'LV', ctime: new Date()},
+        {id: 3, name: 'AA', ctime: new Date()},
+        ]
+    },
+    methods: {
+      deleteData (idx) {
+        this.list.splice(idx, 1)
+      },
+      addData () {
+        this.list.push({id: this.newId, name: this.newName, ctime: new Date()})
+      }
+    },
+    computed: {
+      newList() {
+        // var that = this
+        // function isContainStr (value) {
+        //   // console.log(this);
+        //   // !==-1就表示满足条件，能够找到该字符串
+        //   return value.name.indexOf(that.searchVal) !== -1
+        // }
+
+        // var tempList = this.list.filter(isContainStr)
+
+        // return tempList
+        
+        // es6箭头中的this是在哪儿定义就指向谁
+        return this.list.filter(value => value.name.indexOf(this.searchVal) !== -1)
+      }
+    }
+  })
+</script>
+
+</html>

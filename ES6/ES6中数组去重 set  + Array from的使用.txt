@@ -26,3 +26,6 @@ var filtered = spread.filter((item, index, arr) => {
 //  去除重复元素依靠的是indexOf总是返回第一个元素的位置，后续的重复元素位置与indexOf返回的位置不相等，因此被filter滤掉了。
 co,nsole.log('数组去重结果', filtered) //[12,5,8]
 
+--------------------------------------------
+Jquery中的去重
+$.unique([1,2,3,4,5,6,1,2,3,4,2])

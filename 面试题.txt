@@ -1,0 +1,33 @@
+一。css算法如何计算？权重如何？
+遵循选择器相同，就近原则；选择器不同，出现优先级
+继承的权重为0，
+行内样式表 1，0，0，0
+ID选择器     0，1，0，0
+类选择器     0，0，1，0
+标签选择器  0，0，0，1
+
+二。sass与less区别：
+都是动态样式语言
+1，变量符不一样，Less是@，Sass是$
+2,sass支持条件语句，可以使用if{} else{} for{}循环等，less不支持
+3.环境不同 sass是基于Ruby的 less是基于js，可以在开发环节使用less，然后再编译成css文件放进项目
+4.sass没有局部变量，满足就近原则，less中的{}定义的变量是局部变量
+
+三。实现BFC的几种方式：
+浮动 绝对定位元素 overflow属性值不是‘visible’的块级盒子，这些元素会为他们的内容创建一个BFC
+
+四。js的基本数据类型：
+Boolean Number String Undefined Null
+
+五。js原型 原型链 有什么特点：
+每生成一个function对象，就会有一个原型prototype
+三角关系 
+有一个Student构造函数 ---Student.prototype指向这个Student原型对象--- 原型对象又通过student.prototype.constructor 指回自己的构造函数----通过构造函数创造出来的实例对象s1 --- 实例对象身上的__proto__指向Student原型对象
+
+六。js实现继承的几种方式：
+继承首先得有个父类，继承谁
+1，原型继承：缺点无法设置构造函数的参数
+2，借用构造函数继承：子类Student中 使用 Person.call(this,name,age)  此时的this指向Student
+
+
+

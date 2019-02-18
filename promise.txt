@@ -1,0 +1,47 @@
+ES6提供的promise作为异步操作的新的解决方案
+1.代码更有可读性
+2.可以更方便的处理多种异步操作组合问题
+3.promise 本身就是个构造函数
+4.解决了回调函数多层嵌套的问题,但是还是需要通过回调函数的方式获取异步操作的数据
+ES7  async$awiat可以简化代码书写
+1. async 是用来修饰函数，异步函数
+2. awiat  只使用于async修饰过的函数内部，用来修饰promise实例的，awiat后面所跟的代码必须能返回一个promise实例
+
+
+
+封装一个基于promise的异步操作
+1.自定义一个函数 
+2.在自定义函数内部创建一个promise实例并return返回，new Promise时必须传入一个函数，参数是resolve，reject
+3.在promise 实例的函数内部  执行真正的异步操作
+  3.1 在真正的异步操作成功时调用resolve将成功的数据返回出去
+  3.2   reject 是将失败的数据返回出去
+4.真正使用的时候调用函数获取数据
+ 调用 fetch().then()then的前面返回的是promise对象
+前面的.then中return的promise实例内部resolve或者reject出来的数据 可以在后面的.then中接收
+function fetch(url){
+  return new Promise(function(resolve,reject){	
+	$.ajax({
+	  url:‘url’,
+	  type:'get',
+	 success:function(data){
+	     resolve(data)
+	 }
+	 error:function(err){
+	     reject(err)
+	   }
+	})
+})
+}
+fetch().then(function(res){
+   console.log（res）
+}，function(err){
+   console.log （err）
+})
+
+链式编程的风格：有多个请求需要嵌套的时候
+fetch('aa').then(function(){
+	return fetch('bb')
+}).then(function(){
+	return fetch('cc')
+})
+

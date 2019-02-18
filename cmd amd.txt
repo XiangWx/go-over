@@ -1,0 +1,2 @@
+早期的模块化是使用sea.js require.js 他们分别遵循的是cmd规范，amd规范，但是现在基本不适用了，都是用的webpack，在node中使用的是common.js规范
+现在大型项目都是使用 webpack 
